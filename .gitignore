@@ -1,2 +1,3 @@
 data/*.txt
 control/data/*.txt
+.ipynb_checkpoints
