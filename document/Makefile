@@ -25,6 +25,7 @@ all: ms.pdf
 	rm -rf *.blg
 	rm -rf *.bbl
 	rm -rf *.dvi
+	rm -rf *.out
 	mv ms.pdf diff.pdf
 	cp final/ms.tex .
 	mv diff.pdf final/diff.pdf

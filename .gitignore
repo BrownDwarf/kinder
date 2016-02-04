@@ -1,3 +1,12 @@
 data/*.txt
 control/data/*.txt
 .ipynb_checkpoints
+
+document/final
+document/old
+yahapj.bst
+apj.bst
+emulateapj.cls
+emulateapj-rtx4.cls
+*.png
+talk
