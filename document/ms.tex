@@ -1,0 +1,77 @@
+%\documentclass[iop,revtex4]{emulateapj}% change onecolumn to iop for fancy, iop to twocolumn for manuscript
+\documentclass[onecolumn]{emulateapj}% change onecolumn to iop for fancy, iop to onecolumn for manuscript
+%\documentclass[preprint]{aastex}
+
+%\usepackage{lineno}
+%\usepackage{blindtext}
+%\linenumbers
+
+\let\pwiflocal=\iffalse \let\pwifjournal=\iffalse
+%From: http://arxiv.org/format/1512.00483
+\input{setup}
+
+\providecommand{\eprint}[1]{\href{http://arxiv.org/abs/#1}{#1}}
+\providecommand{\adsurl}[1]{\href{#1}{ADS}}
+\newcommand{\name}{\emph{K2}}
+\def\vsini{$v\sin{i_*}$}
+
+\slugcomment{In preparation}
+
+\shorttitle{\name \emph{K2} variability of YSOs}
+
+\shortauthors{Gully-Santiago et al.}
+
+\bibliographystyle{yahapj}
+
+\begin{document}
+ 
+\title{K2 variability of young stars towards Ophiuchus and Scorpius}
+
+\author{Michael A. Gully-Santiago,\altaffilmark{1} Greg Herczeg,\altaffilmark{1} et al.}
+
+
+\altaffiltext{1}{Kavli Institute for Astronomy and Astrophysics, Beijing, China}
+
+\begin{abstract}
+We present summary statistics of the variability of pre-main sequence stars observed towards Ophiuchus and Scorpius with high precision \emph{K2} photometric monitoring.
+\end{abstract}
+
+\keywords{stars: fundamental parameters --- stars: individual (\name) ---  stars: low-mass -- stars: statistics}
+
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+Pre-main sequence stars vary more than their main sequence star counterparts.  Young stars have disks \citep{2011ARA&A..49...67W}.
+
+In young stars we expect two types of time-variability: flares and rotationally induced sinusoidal variability attributable to longitudinally assymetric starspots coming into and out of view.  Flares occur from accretion events and other phenomena, and have a relatively short time scale of minutes Davenport et al. XX.  The starspot rotational variability has typically a much lower amplitude than the flares, and has periods of typically a few days.
+
+\section{Observations}\label{sec:obs} 
+\emph{K2} observed \emph{Ophiuchus} and \emph{Scorpius} in cycle 2 in 2014.  We assembled a sample of 1678 sources that were targeted as known young cluster members or candidate young stars by \emph{K2} proposals XX-YY.  We acquired long candence lightcurves for this sample, along with about 2000 other sources from cycle 2 that were targeted for reasons other than being candidate young stars.  We refer to these samples as the YSO sample and control samples, respectively.
+
+We used the data available from MAST, which were reduced following the method of Vanderburg \& Johnson XX.  These lightcurves have been de-trended from their raw signal, but some lightcurves still exhibit large instrumental artifacts.  The largest artifact is approximately half-way through the XX day observation window.  All lightcurves have a gap in this time, and some have discontinuous relative fluxes directly before and after this gap.
+
+\section{Analysis}
+We computed the standard deviation $\sigma$ and inter-quartile range $Q_3-Q_1$ for each lightcurve.  Twenty of the 1678 sources were dropped for having undefined standard deviation values, probably due to an errant pixel value.  Our YSO sample was reduced to 1658.  The standard deviation and interquartile range contain information about the average variability of the lightcurve.  The interquartile range is robust against large deviations that occur over a short timescale, with short defined as affecting less than 25\% of the time samples.
+
+The standard deviation, on the other hand, is much more sensitive to outlying data points, which are weighted as the square of the difference from the mean.  So in a plot of standard deviation versus interquartile range, we expect flares and starspot-induced variability to be separable.  We constructed a plot of $\log{\sigma}$ versus $\log{IQR}$, shown in Figure \ref{fig:k2_overview}.
+
+\begin{figure*}
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/K2_YSO_variability_overview.pdf} 
+	\caption{Variability of \emph{K2} cycle 2 light curves of young stars or candidate young stars towards Ophiuchus and Scorpius.  The standard devation scales linearly with the interquartile range for sources with little or no flare events.  Stars with high flare amplitude and/or high number of flares will exhibit large deviations from the linear trend.  Perfectly sinusoidal lightcurves will follow the dashed line.  }
+	\label{fig:k2_overview}
+\end{figure*}
+
+
+\acknowledgements
+ADS and Astropy.
+
+{\it Facilities:} \facility{Smith (IGRINS)}
+
+\clearpage
+
+\bibliographystyle{apj}
+\bibliography{ms}
+
+\end{document}
