@@ -29,10 +29,10 @@ N = 200
 x = np.linspace(0, 4*np.pi, N)
 y = np.sin(x)
 
-file_list_raw = pd.read_csv('file_list.csv', names=['fname'])
-file_list = file_list_raw.fname.values
 
-k2c2_yso_all_info = pd.read_csv('../analysis/K2C02_YSO_kplr_match.csv')
+k2c2_yso_all_info = pd.read_csv('../analysis/K2C02_YSO_CLN_match.csv')
+k2c2_yso_all_info.sort('logiqr', inplace=True)
+file_list = k2c2_yso_all_info.fname.values
 
 
 file = file_list[5]
@@ -58,7 +58,7 @@ plot = Figure(tools="crosshair,pan,reset,resize,save,wheel_zoom",
 
 plot2 = Figure(tools="crosshair,pan,reset,resize,save,wheel_zoom",
                plot_width=400, plot_height=400, title=None,
-              x_range=[2060, 2105], y_range=[0.95, 1.05])
+              x_range=[2063, 2102], y_range=[0.90, 1.10])
 
 
 plot.scatter(xx, yy, size=3, color="#3A5785", alpha=0.1)
@@ -67,7 +67,7 @@ plot.scatter('x', 'y', source=source, size=15, color="#FF0000", alpha=1.0)
 plot2.line('x', 'y', source=source2, line_width=3, line_alpha=0.6)
 
 # Set up widgets
-offset = Slider(title="offset", value=0, start=0, end=200, step=1)
+offset = Slider(title="offset", value=0, start=0, end=1677, step=1)
 
 #layout = hplot(plot, plot2, width=800, height=500)
 
