@@ -10,3 +10,7 @@ emulateapj.cls
 emulateapj-rtx4.cls
 *.png
 talk
+
+data/c6/
+notebooks/c6/
+notebooks/c6_file_list.csv
